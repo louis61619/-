@@ -1,0 +1,101 @@
+import styled from 'styled-components'
+
+export const FooterWrapper = styled.div`
+  position: relative;
+  height: 172px;
+  overflow: hidden;
+  border-top: 1px solid #d3d3d3;
+  background: #f2f2f2;
+
+  .inner-block {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+`
+
+export const FooterLeft = styled.div`
+  width: 520px;
+  padding-top: 15px;
+
+  .link {
+    display: flex;
+    color: #999;
+    line-height: 24px;
+
+    .line {
+      margin: 0 8px 0 10px;
+      color: #c2c2c2;
+    }
+  }
+
+  .info {
+    color: #666;
+    line-height: 24px;
+
+    & .sep {
+      margin-right: 14px;
+    }
+  }
+`
+
+export const FooterRight = styled.div`
+  width: 420px;
+  margin-top: 33px;
+  display: flex;
+  justify-content: space-between;
+
+  .item {
+ 
+    .link {
+      display: block;
+      width: 50px;
+      height: 45px;
+
+      background-image: url(${require("@/assets/img/sprite_footer_02.png").default});
+      background-size: 110px 450px;
+    }
+
+    :nth-child(1) .link {
+      background-position: -60px -101px;
+    }
+    :nth-child(2) .link {
+      background-position: 0 0;
+    }
+    :nth-child(3) .link {
+      background-position: -60px -50px;
+    }
+    :nth-child(4) .link {
+      background-position: 0 -101px;
+    }
+
+    .title {
+      margin-top: 5px;
+      display: block;
+      width: 52px;
+      height: 10px;
+      background-image: url(${require("@/assets/img/sprite_footer_01.png").default});
+      background-size: 180px 100px;
+    }
+
+    :nth-child(1) .title {
+      background-position: -1px -90px;
+    }
+    :nth-child(2) .title {
+      background-position: 0 0;
+      margin-top: 7px;
+    }
+    :nth-child(3) .title {
+      background-position: 0 -54px;
+      margin-top: 6px;
+    }
+
+    :nth-child(4) .title {
+      background-position: -1px -72px;
+      margin-top: 6px;
+    }
+  }
+`
+// item :nth-child(1) 代表的是item下子元素的第一個
+// item:nth-child(1) 代表的是item本身第一個

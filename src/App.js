@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+//第三方庫
+import React, { memo } from 'react'
+import { renderRoutes } from 'react-router-config'
+import { HashRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
 
-function App() {
+//功能類
+import routes from './router'
+import store from '@/store'
+
+//組件
+import AppHeader from '@/components/app-header'
+import AppFooter from '@/components/app-footer'
+import AppPlayerBar from './pages/player/app-player-bar'
+
+export default memo(function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <Provider store={store}>
+      <HashRouter>
+        <AppHeader />
+        {renderRoutes(routes)}
+        <AppFooter />
+        <AppPlayerBar />
+      </HashRouter>
+    </Provider>
 
-export default App;
+  )
+})
