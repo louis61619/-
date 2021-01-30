@@ -51,6 +51,7 @@ export function formatMinuteSecond(time) {
 }
 
 export function getPlaySong(id) {
-  const url = `http://localhost:9001/audio?id=${id}`
+  // const url = `http://localhost:3001/audio?id=${id}`
+  const url = `${window.location.origin}/audio?id=${id}`
   return url
 }
