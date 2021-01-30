@@ -1,5 +1,5 @@
 
-
+import { ip } from '@/services/config'
 export function getCount(count) {
   if(count < 0) return
   if(count < 10000) {
@@ -50,8 +50,14 @@ export function formatMinuteSecond(time) {
   return formatDate(time, "mm:ss");
 }
 
+
+
+const devBaseURL = "http://localhost:3001"
+const proBaseURL = `http://${ip}:3001`
+const BASE_URL = process.env.NODE_ENV === "development" ? devBaseURL: proBaseURL
+
 export function getPlaySong(id) {
-  // const url = `http://localhost:3001/audio?id=${id}`
-  const url = `${window.location.origin}/audio?id=${id}`
+  const url = `${BASE_URL}/audio?id=${id}`
+  // const url = `${window.location.origin}/audio?id=${id}`
   return url
 }
